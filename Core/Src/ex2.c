@@ -35,7 +35,7 @@ void exercise2_run() {
 	while(1) {
 		counter--;
 		if(counter < 0 && traffic_state == RED) {
-			counter = TIME_YELLOW;
+			counter = TIME_GREEN;
 			status_yellow = LED_OFF;
 			status_red = LED_OFF;
 			status_green = LED_ON;
@@ -43,14 +43,14 @@ void exercise2_run() {
 
 		}
 		if(counter < 0 && traffic_state == YELLOW) {
-			counter = TIME_GREEN;
+			counter = TIME_RED;
 			status_yellow = LED_OFF;
 			status_red = LED_ON;
 			status_green = LED_OFF;
 			traffic_state = RED;
 		}
 		if(counter < 0 && traffic_state == GREEN) {
-			counter = TIME_RED;
+			counter = TIME_YELLOW;
 			status_yellow = LED_ON;
 			status_red = LED_OFF;
 			status_green = LED_OFF;
